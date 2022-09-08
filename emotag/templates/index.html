@@ -1,0 +1,209 @@
+<div id="maincon">
+{% include "navbar.html" %}
+{% load static %}
+  <section id="hero">
+    <video class="video"  controls="true" autoplay="autoplay"   playsinline />
+        <source src="{% static 'assets/COVER.mp4' %}"
+            type="video/mp4">
+    </video>
+    <div class="hero-container" data-aos="fade-up">
+      <a class="hero-btn" href="/start">Start <i class="bx bx-chevron-right"></i> </a>
+    </div>
+  </section>
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2>About EMOTAG</h2>
+        </div>
+          <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="content">
+              <h3>EMOTION RECOGNITION TOOL</h3>
+              <p>
+Emotion recognition is the detection and analysis of emotional responses of detected faces.
+              </p>
+              <a href="/start" class="about-btn">Start <i class="bx bx-chevron-right"></i></a>
+            </div>
+          </div>
+          <div class="col-xl-7 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-receipt"></i>
+                  <h4>Quote Library</h4>
+                  <p>Generated a Dynamic Library of Quotes </p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>AI Based Intelligent Agent</h4>
+                  <p>An intelligent agent (IA) is an entity that makes a decision, that enables artificial intelligence to be put into action.</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bx bx-images"></i>
+                  <h4>Face Detection</h4>
+                  <p>The face detection process is an essential step in detecting and locating human faces in images and videos.</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bx bx-shield"></i>
+                  <h4>Security</h4>
+                  <p>Artificial intelligence (AI) security solutions are programmed to identify “safe” versus “malicious” behaviors by cross-comparing the behaviors of users across an environment to those in a similar environment.</p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>Emotion Recognition Tools</h3>
+          <p> Emotion recognition software detects facial expressions from images or video and returns the probable distribution of each of the six universal emotions</p>
+          <a class="cta-btn" href="/start">START</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2>Testimonials</h2>
+          <p>Know What Our Users Say.</p>
+        </div>
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                 Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2>Team</h2>
+          <p>Our Team and Developers.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <divq class="member" data-aos="fade-up">
+              <div class="pic"><img src="{% static 'assets/img/team/team-3.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Varun Bhadoriya</h4>
+                <span>Researcher and Business Analyst</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="150">
+              <div class="pic"><img src="{% static 'assets/img/team/team-2.jpeg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Niharika Jain</h4>
+                <span>Machine Learning Engineer and Database Administrator</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="pic"><img src="{% static 'assets/img/team/team-1.jpeg' %}" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Abhinandan Kumar</h4>
+                <span>Front-End Developer and Cloud Engineer</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->  </main><!-- End #main -->
+
+{% include "footer.html" %}

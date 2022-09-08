@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>EMOTAG</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{% load static %}
+ <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File --><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent" style="background-color:#d16767;">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span style="color:black;">EMO</span><span style="color:white;">TAG</span></a></h1>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="index#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="index#testimonials">Testimonials</a></li>
+          <li><a class="nav-link scrollto" href="index#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+{% load static %}
+  <main id="main" >
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>DashBoard</h2>
+          <ol>
+            <li><a href="index">Home</a></li>
+            <li>DashBoard</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+    <section class="inner-page">
+      <div class="container">
+          <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+          <h2 id="x">{{result}}</h2>
+          <p>Excited to Know YOUR EMOTION</p>
+              <p id="y">{{voice}}</p>
+              <div id="content"/>
+        </div>
+      </div>
+<div class="container">
+  <div class="row">
+    <div class="content col-xl-6 d-flex align-items-stretch" data-aos="fade-up">
+              <canvas id="myChart" style="width:100%;max-width:600px; padding:2%;"></canvas>
+          </div>
+    <div class="content col-xl-6 d-flex align-items-stretch" data-aos="fade-up">
+              <canvas id="myChart1" style="width:100%;max-width:600px;padding:2%;"></canvas>
+          </div>
+  </div>
+</div>
+<script>
+var xValues = ['SAD','FEAR','HAPPY','NEUTRAL','ANGRY','SURPRISE','DISGUST'];
+var yValues ={{data}};
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145",
+  "#d1ba67",
+  "#6bcba4"
+];
+new Chart("myChart1", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Emotions You Have"
+    }
+  }
+});
+new Chart("myChart", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Exited about You"
+    }
+  }
+});
+</script>
+<script>
+    function getVoices() {
+  let voices = speechSynthesis.getVoices();
+  if(!voices.length){
+    // some time the voice will not be initialized so we can call spaek with empty string
+    // this will initialize the voices
+    let utterance = new SpeechSynthesisUtterance("");
+    speechSynthesis.speak(utterance);
+    voices = speechSynthesis.getVoices();
+  }
+  return voices;
+}
+
+
+function speak(text, voice, rate, pitch, volume) {
+  // create a SpeechSynthesisUtterance to configure the how text to be spoken
+  let speakData = new SpeechSynthesisUtterance();
+  speakData.volume = volume; // From 0 to 1
+  speakData.rate = rate; // From 0.1 to 10
+  speakData.pitch = pitch; // From 0 to 2
+  speakData.text = text;
+  speakData.lang = 'en';
+  speakData.voice = voice;
+
+  // pass the SpeechSynthesisUtterance to speechSynthesis.speak to start speaking
+  speechSynthesis.speak(speakData);
+
+}
+
+if ('speechSynthesis' in window) {
+
+  let voices = getVoices();
+  let rate = 1, pitch = 2, volume = 1;
+
+  let text ="your current mood is "+"{{result}}";
+ if("{{result}}"=="NO FACE IDENTIFIED")
+  text="NO FACE IDENTIFIED";
+  speak(text, voices[5], rate, pitch, volume);
+
+  setTimeout(()=>{ // speak after 2 seconds
+    text = "{{voice}}";
+    speak(text, voices[10], rate, pitch, volume );
+  }, 2000);
+}else{
+  console.log(' Speech Synthesis Not Supported 😞');
+}
+</script>
+    </section>
+  </main><!-- End #main -->
+  {% include "footer.html" %}
